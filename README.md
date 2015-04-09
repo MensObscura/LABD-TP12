@@ -2,10 +2,10 @@
 
 
 Exercice 1
-__________
+----------
 
 Question 1
-__________
+-----------
 
 ```
 SELECT ?x  WHERE
@@ -82,8 +82,7 @@ SELECT ?x  WHERE
 ```
 
 Question 2
-__________
-
+----------
 
 ```
 SELECT *  WHERE
