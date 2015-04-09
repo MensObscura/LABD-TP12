@@ -214,3 +214,17 @@ WHERE {
 
 Question 8
 ----------
+```
+PREFIX sports: <http://www.labd.org/2015/sport/schema#> 
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs> 
+SELECT DISTINCT ?h (COUNT(?s1) AS ?s)
+WHERE {
+
+  ?h sports:pratique ?s1
+  
+}
+GROUP BY ?h
+```
+
+Question 9
+----------
