@@ -151,3 +151,16 @@ WHERE {
 
 }
 ```
+
+Question 6
+----------
+
+```
+PREFIX sports: <http://www.labd.org/2015/sport/schema#> 
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs> 
+SELECT *
+WHERE {
+  ?h sports:pratique ?s
+}
+GROUP BY ?h ?s
+```
