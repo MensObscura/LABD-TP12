@@ -228,3 +228,17 @@ GROUP BY ?h
 
 Question 9
 ----------
+
+```
+PREFIX sports: <http://www.labd.org/2015/sport/schema#> 
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs> 
+SELECT DISTINCT ?m
+WHERE {
+   
+   
+    ?s sports:match/rdfs:label ?m
+
+
+}
+```
+pas finie
