@@ -194,3 +194,23 @@ GROUP BY ?h
 HAVING  (?s =1)
 
 ```
+
+```
+PREFIX sports: <http://www.labd.org/2015/sport/schema#> 
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs> 
+SELECT DISTINCT ?h
+WHERE {
+
+?h sports:pratique ?s1
+
+ MINUS { SELECT DISTINCT ?h
+	WHERE {   ?h sports:pratique ?s1
+  		?h sports:pratique ?s2
+		FILTER(?s1 != ?s2)
+}
+}
+}
+```
+
+Question 8
+----------
