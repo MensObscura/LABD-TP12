@@ -83,3 +83,72 @@ SELECT ?x  WHERE
 
 Question 2
 __________
+
+
+```
+SELECT *  WHERE
+{
+?x a rdf:Property 
+?x rdfs:domain ?domain  
+BIND (URI("http://www.labd.org/2015/sport/schema#Sport") AS ?u)
+FILTER (?u = ?domain)
+}
+```
+```
+<?xml version="1.0" ?>
+<sparql xmlns='http://www.w3.org/2005/sparql-results#'>
+<head>
+<variable name='x'/>
+<variable name='domain'/>
+<variable name='u'/>
+</head>
+<results>
+<result>
+<binding name='x'><uri>http://www.labd.org/2015/sport/schema#sePratiqueSur</uri></binding>
+<binding name='domain'><uri>http://www.labd.org/2015/sport/schema#Sport</uri></binding>
+<binding name='u'><uri>http://www.labd.org/2015/sport/schema#Sport</uri></binding>
+</result>
+<result>
+<binding name='x'><uri>http://www.labd.org/2015/sport/schema#utiliseMateriel</uri></binding>
+<binding name='domain'><uri>http://www.labd.org/2015/sport/schema#Sport</uri></binding>
+<binding name='u'><uri>http://www.labd.org/2015/sport/schema#Sport</uri></binding>
+</result>
+</results>
+</sparql>
+```
+
+Question 3
+-----------
+
+```
+PREFIX sports: <http://www.labd.org/2015/sport/schema#> 
+
+SELECT *
+WHERE {
+  ?x  a sports:Sport
+}
+```
+
+Question 4
+----------
+
+```
+SELECT *
+WHERE {
+  ?x rdfs:comment ?c
+  filter(regex(?c,"sport","s"))
+}
+```
+
+
+Question 5
+----------
+```
+PREFIX sports: <http://www.labd.org/2015/sport/schema#>
+SELECT *
+WHERE {
+  ?x a sports:Sport 
+  FILTER NOT EXISTS {?x sports:utiliseMateriel ?y}
+
+}
+```
