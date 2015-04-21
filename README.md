@@ -266,3 +266,23 @@ WHERE {
 
 }
 ```
+
+Question 11
+-----------
+
+```
+PREFIX sports: <http://www.labd.org/2015/sport/schema#> 
+select ?sp ?d
+where {
+  {
+  ?s a sports:SportCollectif
+  ?sp sports:match/sports:duree ?d 
+  FILTER NOT EXISTS {?d rdfs:member ?f}
+  }
+UNION
+  {
+  ?s a sports:SportCollectif
+  ?s sports:match/sports:duree/rdfs:member ?d
+  } 
+}
+```
