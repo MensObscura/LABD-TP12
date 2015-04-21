@@ -232,16 +232,17 @@ Question 9
 ```
 PREFIX sports: <http://www.labd.org/2015/sport/schema#> 
 PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs> 
-SELECT DISTINCT *
+SELECT DISTINCT ?o
 WHERE {
-   
-   
-    ?s sports:match/rdfs:label ?m
-     ?s sports:match/sports:duree ?d
 
+
+    ?s sports:match/rdfs:label ?m
+    ?s sports:match/sports:duree ?d
+    ?d rdfs:member ?o
     FILTER (xsd:string(?m)= "Match de Basket")
 
 }
 
+
 ```
-pas finie
+
