@@ -331,3 +331,32 @@ jb:me foaf:knows+/foaf:name ?n
 FILTER(xsd:string(?n) != "James Bond")
 }
 ```
+
+Question 4
+----------
+
+```
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX jb: <http://bond007.org/RDF/mes_donnees.rdf#>
+SELECT ?n ?p WHERE
+{
+ jb:me foaf:knows ?f
+ ?f foaf:name ?n
+ ?f foaf:phone ?p
+}
+```
+
+
+Question 5
+----------
+
+```
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX jb: <http://bond007.org/RDF/mes_donnees.rdf#>
+SELECT  ?jb (count(?f) as ?nb) WHERE
+{
+
+ ?jb a foaf:Person 
+  ?jb foaf:knows ?f
+}GROUP BY ?jb
+```
