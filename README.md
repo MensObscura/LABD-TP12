@@ -296,10 +296,10 @@ Question 1
 
 ```
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX data: <http://bond007.org/RDF/mes_donnees.rdf#>
+PREFIX jb: <http://bond007.org/RDF/mes_donnees.rdf#>
 SELECT ?n ?r WHERE
 {
- data:me foaf:knows ?f
+ jb:me foaf:knows ?f
  ?f foaf:name ?n
  OPTIONAL {?f foaf:homepage ?r}
 }
