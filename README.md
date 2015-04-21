@@ -304,3 +304,17 @@ SELECT ?n ?r WHERE
  OPTIONAL {?f foaf:homepage ?r}
 }
 ```
+
+Question 2
+----------
+
+```
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX jb: <http://bond007.org/RDF/mes_donnees.rdf#>
+SELECT ?n ?r WHERE
+{
+ jb:me foaf:knows ?f
+ ?f foaf:name ?n
+OPTIONAL {?f foaf:homepage | foaf:interest | foaf:workplaceHomepage ?r}
+}
+```
