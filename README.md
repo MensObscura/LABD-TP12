@@ -272,7 +272,7 @@ Question 11
 
 ```
 PREFIX sports: <http://www.labd.org/2015/sport/schema#> 
-select ?sp ?d
+select distinct ?sp ?d
 where {
   {
   ?s a sports:SportCollectif
